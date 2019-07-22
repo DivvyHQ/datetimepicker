@@ -579,9 +579,9 @@ var DateFormatter;
  * @homepage http://xdsoft.net/jqplugins/datetimepicker/
  * @author Chupurnov Valeriy (<chupurnov@gmail.com>)
  */
-/*global DateFormatter, document,window,jQuery,setTimeout,clearTimeout,HighlightedDate,getCurrentValue*/
+/* global DateFormatter, document,window,jQuery,setTimeout,clearTimeout,HighlightedDate,getCurrentValue */
 ;(function (factory) {
-	if ( typeof define === 'function' && define.amd ) {
+	if (typeof define === 'function' && define.amd) {
 		// AMD. Register as an anonymous module.
 		define(['jquery', 'jquery-mousewheel'], factory);
 	} else if (typeof exports === 'object') {
@@ -593,7 +593,7 @@ var DateFormatter;
 	}
 }(function ($) {
 	'use strict';
-	var default_options  = {
+	var default_options = {
 		i18n: {
 			ar: { // Arabic
 				months: [
@@ -712,7 +712,7 @@ var DateFormatter;
 				],
 				dayOfWeek: ["Pazar", "Pazartesi", "Salı", "Çarşamba", "Perşembe", "Cuma", "Cumartesi"]
 			},
-			fr: { //French
+			fr: { // French
 				months: [
 					"Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"
 				],
@@ -767,7 +767,7 @@ var DateFormatter;
 			},
 			se: { // Swedish
 				months: [
-					"Januari", "Februari", "Mars", "April", "Maj", "Juni", "Juli", "Augusti", "September",  "Oktober", "November", "December"
+					"Januari", "Februari", "Mars", "April", "Maj", "Juni", "Juli", "Augusti", "September", "Oktober", "November", "December"
 				],
 				dayOfWeekShort: [
 					"Sön", "Mån", "Tis", "Ons", "Tor", "Fre", "Lör"
@@ -853,7 +853,7 @@ var DateFormatter;
 				],
 				dayOfWeek: ["vasárnap", "hétfő", "kedd", "szerda", "csütörtök", "péntek", "szombat"]
 			},
-			az: { //Azerbaijanian (Azeri)
+			az: { // Azerbaijanian (Azeri)
 				months: [
 					"Yanvar", "Fevral", "Mart", "Aprel", "May", "Iyun", "Iyul", "Avqust", "Sentyabr", "Oktyabr", "Noyabr", "Dekabr"
 				],
@@ -862,16 +862,16 @@ var DateFormatter;
 				],
 				dayOfWeek: ["Bazar", "Bazar ertəsi", "Çərşənbə axşamı", "Çərşənbə", "Cümə axşamı", "Cümə", "Şənbə"]
 			},
-			bs: { //Bosanski
+			bs: { // Bosanski
 				months: [
 					"Januar", "Februar", "Mart", "April", "Maj", "Jun", "Jul", "Avgust", "Septembar", "Oktobar", "Novembar", "Decembar"
 				],
 				dayOfWeekShort: [
 					"Ned", "Pon", "Uto", "Sri", "Čet", "Pet", "Sub"
 				],
-				dayOfWeek: ["Nedjelja","Ponedjeljak", "Utorak", "Srijeda", "Četvrtak", "Petak", "Subota"]
+				dayOfWeek: ["Nedjelja", "Ponedjeljak", "Utorak", "Srijeda", "Četvrtak", "Petak", "Subota"]
 			},
-			ca: { //Català
+			ca: { // Català
 				months: [
 					"Gener", "Febrer", "Març", "Abril", "Maig", "Juny", "Juliol", "Agost", "Setembre", "Octubre", "Novembre", "Desembre"
 				],
@@ -880,7 +880,7 @@ var DateFormatter;
 				],
 				dayOfWeek: ["Diumenge", "Dilluns", "Dimarts", "Dimecres", "Dijous", "Divendres", "Dissabte"]
 			},
-			'en-GB': { //English (British)
+			'en-GB': { // English (British)
 				months: [
 					"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"
 				],
@@ -889,7 +889,7 @@ var DateFormatter;
 				],
 				dayOfWeek: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
 			},
-			et: { //"Eesti"
+			et: { // "Eesti"
 				months: [
 					"Jaanuar", "Veebruar", "Märts", "Aprill", "Mai", "Juuni", "Juuli", "August", "September", "Oktoober", "November", "Detsember"
 				],
@@ -898,7 +898,7 @@ var DateFormatter;
 				],
 				dayOfWeek: ["Pühapäev", "Esmaspäev", "Teisipäev", "Kolmapäev", "Neljapäev", "Reede", "Laupäev"]
 			},
-			eu: { //Euskara
+			eu: { // Euskara
 				months: [
 					"Urtarrila", "Otsaila", "Martxoa", "Apirila", "Maiatza", "Ekaina", "Uztaila", "Abuztua", "Iraila", "Urria", "Azaroa", "Abendua"
 				],
@@ -907,7 +907,7 @@ var DateFormatter;
 				],
 				dayOfWeek: ['Igandea', 'Astelehena', 'Asteartea', 'Asteazkena', 'Osteguna', 'Ostirala', 'Larunbata']
 			},
-			fi: { //Finnish (Suomi)
+			fi: { // Finnish (Suomi)
 				months: [
 					"Tammikuu", "Helmikuu", "Maaliskuu", "Huhtikuu", "Toukokuu", "Kesäkuu", "Heinäkuu", "Elokuu", "Syyskuu", "Lokakuu", "Marraskuu", "Joulukuu"
 				],
@@ -916,7 +916,7 @@ var DateFormatter;
 				],
 				dayOfWeek: ["sunnuntai", "maanantai", "tiistai", "keskiviikko", "torstai", "perjantai", "lauantai"]
 			},
-			gl: { //Galego
+			gl: { // Galego
 				months: [
 					"Xan", "Feb", "Maz", "Abr", "Mai", "Xun", "Xul", "Ago", "Set", "Out", "Nov", "Dec"
 				],
@@ -925,7 +925,7 @@ var DateFormatter;
 				],
 				dayOfWeek: ["Domingo", "Luns", "Martes", "Mércores", "Xoves", "Venres", "Sábado"]
 			},
-			hr: { //Hrvatski
+			hr: { // Hrvatski
 				months: [
 					"Siječanj", "Veljača", "Ožujak", "Travanj", "Svibanj", "Lipanj", "Srpanj", "Kolovoz", "Rujan", "Listopad", "Studeni", "Prosinac"
 				],
@@ -934,7 +934,7 @@ var DateFormatter;
 				],
 				dayOfWeek: ["Nedjelja", "Ponedjeljak", "Utorak", "Srijeda", "Četvrtak", "Petak", "Subota"]
 			},
-			ko: { //Korean (한국어)
+			ko: { // Korean (한국어)
 				months: [
 					"1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"
 				],
@@ -943,7 +943,7 @@ var DateFormatter;
 				],
 				dayOfWeek: ["일요일", "월요일", "화요일", "수요일", "목요일", "금요일", "토요일"]
 			},
-			lt: { //Lithuanian (lietuvių)
+			lt: { // Lithuanian (lietuvių)
 				months: [
 					"Sausio", "Vasario", "Kovo", "Balandžio", "Gegužės", "Birželio", "Liepos", "Rugpjūčio", "Rugsėjo", "Spalio", "Lapkričio", "Gruodžio"
 				],
@@ -952,7 +952,7 @@ var DateFormatter;
 				],
 				dayOfWeek: ["Sekmadienis", "Pirmadienis", "Antradienis", "Trečiadienis", "Ketvirtadienis", "Penktadienis", "Šeštadienis"]
 			},
-			lv: { //Latvian (Latviešu)
+			lv: { // Latvian (Latviešu)
 				months: [
 					"Janvāris", "Februāris", "Marts", "Aprīlis ", "Maijs", "Jūnijs", "Jūlijs", "Augusts", "Septembris", "Oktobris", "Novembris", "Decembris"
 				],
@@ -961,7 +961,7 @@ var DateFormatter;
 				],
 				dayOfWeek: ["Svētdiena", "Pirmdiena", "Otrdiena", "Trešdiena", "Ceturtdiena", "Piektdiena", "Sestdiena"]
 			},
-			mk: { //Macedonian (Македонски)
+			mk: { // Macedonian (Македонски)
 				months: [
 					"јануари", "февруари", "март", "април", "мај", "јуни", "јули", "август", "септември", "октомври", "ноември", "декември"
 				],
@@ -970,7 +970,7 @@ var DateFormatter;
 				],
 				dayOfWeek: ["Недела", "Понеделник", "Вторник", "Среда", "Четврток", "Петок", "Сабота"]
 			},
-			mn: { //Mongolian (Монгол)
+			mn: { // Mongolian (Монгол)
 				months: [
 					"1-р сар", "2-р сар", "3-р сар", "4-р сар", "5-р сар", "6-р сар", "7-р сар", "8-р сар", "9-р сар", "10-р сар", "11-р сар", "12-р сар"
 				],
@@ -979,7 +979,7 @@ var DateFormatter;
 				],
 				dayOfWeek: ["Даваа", "Мягмар", "Лхагва", "Пүрэв", "Баасан", "Бямба", "Ням"]
 			},
-			'pt-BR': { //Português(Brasil)
+			'pt-BR': { // Português(Brasil)
 				months: [
 					"Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"
 				],
@@ -988,7 +988,7 @@ var DateFormatter;
 				],
 				dayOfWeek: ["Domingo", "Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado"]
 			},
-			sk: { //Slovenčina
+			sk: { // Slovenčina
 				months: [
 					"Január", "Február", "Marec", "Apríl", "Máj", "Jún", "Júl", "August", "September", "Október", "November", "December"
 				],
@@ -997,7 +997,7 @@ var DateFormatter;
 				],
 				dayOfWeek: ["Nedeľa", "Pondelok", "Utorok", "Streda", "Štvrtok", "Piatok", "Sobota"]
 			},
-			sq: { //Albanian (Shqip)
+			sq: { // Albanian (Shqip)
 				months: [
 					"Janar", "Shkurt", "Mars", "Prill", "Maj", "Qershor", "Korrik", "Gusht", "Shtator", "Tetor", "Nëntor", "Dhjetor"
 				],
@@ -1006,25 +1006,25 @@ var DateFormatter;
 				],
 				dayOfWeek: ["E Diel", "E Hënë", "E Martē", "E Mërkurë", "E Enjte", "E Premte", "E Shtunë"]
 			},
-			'sr-YU': { //Serbian (Srpski)
+			'sr-YU': { // Serbian (Srpski)
 				months: [
 					"Januar", "Februar", "Mart", "April", "Maj", "Jun", "Jul", "Avgust", "Septembar", "Oktobar", "Novembar", "Decembar"
 				],
 				dayOfWeekShort: [
 					"Ned", "Pon", "Uto", "Sre", "čet", "Pet", "Sub"
 				],
-				dayOfWeek: ["Nedelja","Ponedeljak", "Utorak", "Sreda", "Četvrtak", "Petak", "Subota"]
+				dayOfWeek: ["Nedelja", "Ponedeljak", "Utorak", "Sreda", "Četvrtak", "Petak", "Subota"]
 			},
-			sr: { //Serbian Cyrillic (Српски)
+			sr: { // Serbian Cyrillic (Српски)
 				months: [
 					"јануар", "фебруар", "март", "април", "мај", "јун", "јул", "август", "септембар", "октобар", "новембар", "децембар"
 				],
 				dayOfWeekShort: [
 					"нед", "пон", "уто", "сре", "чет", "пет", "суб"
 				],
-				dayOfWeek: ["Недеља","Понедељак", "Уторак", "Среда", "Четвртак", "Петак", "Субота"]
+				dayOfWeek: ["Недеља", "Понедељак", "Уторак", "Среда", "Четвртак", "Петак", "Субота"]
 			},
-			sv: { //Svenska
+			sv: { // Svenska
 				months: [
 					"Januari", "Februari", "Mars", "April", "Maj", "Juni", "Juli", "Augusti", "September", "Oktober", "November", "December"
 				],
@@ -1033,7 +1033,7 @@ var DateFormatter;
 				],
 				dayOfWeek: ["Söndag", "Måndag", "Tisdag", "Onsdag", "Torsdag", "Fredag", "Lördag"]
 			},
-			'zh-TW': { //Traditional Chinese (繁體中文)
+			'zh-TW': { // Traditional Chinese (繁體中文)
 				months: [
 					"一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"
 				],
@@ -1042,7 +1042,7 @@ var DateFormatter;
 				],
 				dayOfWeek: ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"]
 			},
-			zh: { //Simplified Chinese (简体中文)
+			zh: { // Simplified Chinese (简体中文)
 				months: [
 					"一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"
 				],
@@ -1051,7 +1051,7 @@ var DateFormatter;
 				],
 				dayOfWeek: ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"]
 			},
-			he: { //Hebrew (עברית)
+			he: { // Hebrew (עברית)
 				months: [
 					'ינואר', 'פברואר', 'מרץ', 'אפריל', 'מאי', 'יוני', 'יולי', 'אוגוסט', 'ספטמבר', 'אוקטובר', 'נובמבר', 'דצמבר'
 				],
@@ -1099,7 +1099,7 @@ var DateFormatter;
 					"კვ", "ორშ", "სამშ", "ოთხ", "ხუთ", "პარ", "შაბ"
 				],
 				dayOfWeek: ["კვირა", "ორშაბათი", "სამშაბათი", "ოთხშაბათი", "ხუთშაბათი", "პარასკევი", "შაბათი"]
-			},
+			}
 		},
 		value: '',
 		rtl: false,
@@ -1151,10 +1151,10 @@ var DateFormatter;
 		inverseButton: false,
 		hours12: false,
 		next: 'xdsoft_next',
-		prev : 'xdsoft_prev',
+		prev: 'xdsoft_prev',
 		dayOfWeekStart: 0,
 		parentID: 'body',
-		timeHeightInTimePicker: 25,
+		timeHeightInTimePicker: 21,
 		timepickerScrollbar: true,
 		todayButton: true,
 		prevButton: true,
@@ -1181,9 +1181,9 @@ var DateFormatter;
 		weekends: [],
 		highlightedDates: [],
 		highlightedPeriods: [],
-		allowDates : [],
-		allowDateRe : null,
-		disabledDates : [],
+		allowDates: [],
+		allowDateRe: null,
+		disabledDates: [],
 		disabledWeekDays: [],
 		yearOffset: 0,
 		beforeShowDay: null,
@@ -1200,31 +1200,31 @@ var DateFormatter;
 		meridiem: ['AM', 'PM']
 	};
 
-	var initDateFormatter = function(){
+	var initDateFormatter = function () {
 		var locale = default_options.i18n[globalLocale],
 			opts = {
 				days: locale.dayOfWeek,
 				daysShort: locale.dayOfWeekShort,
 				months: locale.months,
-				monthsShort: $.map(locale.months, function(n){ return n.substring(0, 3) }),
+				monthsShort: $.map(locale.months, function (n) { return n.substring(0, 3) })
 			};
 
-	 	dateHelper = new DateFormatter({
+		dateHelper = new DateFormatter({
 			dateSettings: $.extend({}, dateFormatterOptionsDefault, opts)
 		});
 	};
 
 	// for locale settings
 	$.datetimepicker = {
-		setLocale: function(locale){
-			var newLocale = default_options.i18n[locale]?locale:globalLocaleDefault;
-			if(globalLocale != newLocale){
+		setLocale: function (locale) {
+			var newLocale = default_options.i18n[locale] ? locale : globalLocaleDefault;
+			if (globalLocale !== newLocale) {
 				globalLocale = newLocale;
 				// reinit date formatter
 				initDateFormatter();
 			}
 		},
-		setDateFormatter: function(dateFormatter) {
+		setDateFormatter: function (dateFormatter) {
 			dateHelper = dateFormatter;
 		},
 		RFC_2822: 'D, d M Y H:i:s O',
@@ -1276,10 +1276,10 @@ var DateFormatter;
 		return this.each(function () {
 			var timeboxparent = $(this),
 				pointerEventToXY = function (e) {
-					var out = {x: 0, y: 0},
+					var out = { x: 0, y: 0 },
 						touch;
 					if (e.type === 'touchstart' || e.type === 'touchmove' || e.type === 'touchend' || e.type === 'touchcancel') {
-						touch  = e.originalEvent.touches[0] || e.originalEvent.changedTouches[0];
+						touch = e.originalEvent.touches[0] || e.originalEvent.changedTouches[0];
 						out.x = touch.clientX;
 						out.y = touch.clientY;
 					} else if (e.type === 'mousedown' || e.type === 'mouseup' || e.type === 'mousemove' || e.type === 'mouseover' || e.type === 'mouseout' || e.type === 'mouseenter' || e.type === 'mouseleave') {
@@ -1314,7 +1314,7 @@ var DateFormatter;
 				scrollbar.append(scroller);
 
 				timeboxparent.addClass('xdsoft_scroller_box').append(scrollbar);
-				calcOffset = function calcOffset(event) {
+				calcOffset = function calcOffset (event) {
 					var offset = pointerEventToXY(event).y - startY + startTopScroll;
 					if (offset < 0) {
 						offset = 0;
@@ -1358,7 +1358,7 @@ var DateFormatter;
 						}
 					})
 					.on('touchend touchcancel', function () {
-						touchStart =  false;
+						touchStart = false;
 						startTopScroll = 0;
 					});
 
@@ -1459,13 +1459,12 @@ var DateFormatter;
 
 			lazyInit = function (input) {
 				input
-					.on('open.xdsoft focusin.xdsoft mousedown.xdsoft touchstart', function initOnActionCallback() {
+					.on('open.xdsoft focusin.xdsoft mousedown.xdsoft touchstart', function initOnActionCallback () {
 						if (input.is(':disabled') || input.data('xdsoft_datetimepicker')) {
 							return;
 						}
 						clearTimeout(lazyInitTimer);
 						lazyInitTimer = setTimeout(function () {
-
 							if (!input.data('xdsoft_datetimepicker')) {
 								createDateTimePicker(input);
 							}
@@ -1485,9 +1484,22 @@ var DateFormatter;
 					'<div class="xdsoft_label xdsoft_year"><span></span><i></i></div>' +
 					'<button type="button" class="xdsoft_next"></button></div>'),
 				calendar = $('<div class="xdsoft_calendar"></div>'),
-				timepicker = $('<div class="xdsoft_timepicker active"><button type="button" class="xdsoft_prev"></button><div class="xdsoft_time_box"></div><button type="button" class="xdsoft_next"></button></div>'),
-				timeboxparent = timepicker.find('.xdsoft_time_box').eq(0),
-				timebox = $('<div class="xdsoft_time_variant"></div>'),
+
+				timepicker = $('<table class="xdsoft_timepicker active">' +
+					'<thead><tr class="timepicker_header"></tr><tr><th>Time:</th></tr></thead>' +
+					'<tbody>' +
+					'<tr><td><div class="hour_time display_time"><input type="text" class="display_time_text hour_time"><div class="xdsoft_time_box hour_time_box display_time"></div></div></td>' +
+					'<td><div class="separator display_time"> : </div></td>' +
+					'<td><div class="minute_time display_time"><input type="text" class="display_time_text minute_time"><div class="xdsoft_time_box minute_time_box display_time"></div></div></td>' +
+					'<td><div class="separator display_time">  </div></td>' +
+					'<td><div class="meridiem_time"><button class="display_time_text meridiem_time"></button></div></td>' +
+					'</tr></tbody></table>'),
+				hourTimeboxparent = timepicker.find('.hour_time_box').eq(0),
+				hourTimebox = $('<div class="xdsoft_time_variant"></div>'),
+
+				minuteTimeboxParent = timepicker.find('.minute_time_box').eq(0),
+				minuteTimebox = $('<div class="xdsoft_time_variant"></div>'),
+
 				applyButton = $('<button type="button" class="xdsoft_save_selected blue-gradient-button">Save Selected</button>'),
 
 				monthselect = $('<div class="xdsoft_select xdsoft_monthselect"><div></div></div>'),
@@ -1501,8 +1513,7 @@ var DateFormatter;
 				setPos,
 				timer = 0,
 				_xdsoft_datetime,
-				forEachAncestorOf,
-				throttle;
+				forEachAncestorOf;
 
 			if (options.id) {
 				datetimepicker.attr('id', options.id);
@@ -1608,7 +1619,7 @@ var DateFormatter;
 					options.allowDates = $.extend(true, [], _options.allowDates);
 				}
 
-				if (_options.allowDateRe && Object.prototype.toString.call(_options.allowDateRe)==="[object String]") {
+				if (_options.allowDateRe && Object.prototype.toString.call(_options.allowDateRe) === "[object String]") {
 					options.allowDateRe = new RegExp(_options.allowDateRe);
 				}
 
@@ -1646,8 +1657,7 @@ var DateFormatter;
 							dateEnd = value[1];
 							desc = value[2];
 							style = value[3];
-						}
-						else {
+						} else {
 							var splitData = $.map(value.split(','), $.trim);
 							dateTest = dateHelper.parseDate(splitData[0], options.formatDate);
 							dateEnd = dateHelper.parseDate(splitData[1], options.formatDate);
@@ -1722,14 +1732,15 @@ var DateFormatter;
 				}
 
 				if (!options.timepickerScrollbar) {
-					timeboxparent.xdsoftScroller('hide');
+					hourTimeboxparent.xdsoftScroller('hide');
+					minuteTimeboxParent.xdsoftScroller('hide');
 				}
 
 				if (options.minDate && /^[\+\-](.*)$/.test(options.minDate)) {
 					options.minDate = dateHelper.formatDate(_xdsoft_datetime.strToDateTime(options.minDate), options.formatDate);
 				}
 
-				if (options.maxDate &&  /^[\+\-](.*)$/.test(options.maxDate)) {
+				if (options.maxDate && /^[\+\-](.*)$/.test(options.maxDate)) {
 					options.maxDate = dateHelper.formatDate(_xdsoft_datetime.strToDateTime(options.maxDate), options.formatDate);
 				}
 
@@ -1753,7 +1764,7 @@ var DateFormatter;
 					input
 						.off('blur.xdsoft')
 						.on('blur.xdsoft', function () {
-							if (options.allowBlank && (!$.trim($(this).val()).length || (typeof options.mask == "string" && $.trim($(this).val()) === options.mask.replace(/[0-9]/g, '_')))) {
+							if (options.allowBlank && (!$.trim($(this).val()).length || (typeof options.mask === "string" && $.trim($(this).val()) === options.mask.replace(/[0-9]/g, '_')))) {
 								$(this).val(null);
 								datetimepicker.data('xdsoft_datetime').empty();
 							} else {
@@ -1761,9 +1772,9 @@ var DateFormatter;
 								if (d) { // parseDate() may skip some invalid parts like date or time, so make it clear for user: show parsed date/time
 									$(this).val(dateHelper.formatDate(d, options.format));
 								} else {
-									var splittedHours   = +([$(this).val()[0], $(this).val()[1]].join('')),
+									var splittedHours = +([$(this).val()[0], $(this).val()[1]].join('')),
 										splittedMinutes = +([$(this).val()[2], $(this).val()[3]].join(''));
-	
+
 									// parse the numbers as 0312 => 03:12
 									if (!options.datepicker && options.timepicker && splittedHours >= 0 && splittedHours < 24 && splittedMinutes >= 0 && splittedMinutes < 60) {
 										$(this).val([splittedHours, splittedMinutes].map(function (item) {
@@ -1797,12 +1808,14 @@ var DateFormatter;
 					return false;
 				});
 
-			//scroll_element = timepicker.find('.xdsoft_time_box');
-			timeboxparent.append(timebox);
-			timeboxparent.xdsoftScroller();
+			hourTimeboxparent.append(hourTimebox);
+			hourTimeboxparent.xdsoftScroller();
+			minuteTimeboxParent.append(minuteTimebox);
+			minuteTimeboxParent.xdsoftScroller();
 
 			datetimepicker.on('afterOpen.xdsoft', function () {
-				timeboxparent.xdsoftScroller();
+				hourTimeboxparent.xdsoftScroller();
+				minuteTimeboxParent.xdsoftScroller();
 			});
 
 			datetimepicker
@@ -1858,17 +1871,14 @@ var DateFormatter;
 				_this.setCurrentTime = function (dTime, requireValidDate) {
 					if (typeof dTime === 'string') {
 						_this.currentTime = _this.strToDateTime(dTime);
-					}
-					else if (_this.isValidDate(dTime)) {
+					} else if (_this.isValidDate(dTime)) {
 						_this.currentTime = dTime;
-					}
-					else if (!dTime && !requireValidDate && options.allowBlank) {
+					} else if (!dTime && !requireValidDate && options.allowBlank) {
 						_this.currentTime = null;
-					}
-					else {
+					} else {
 						_this.currentTime = _this.now();
 					}
-					
+
 					datetimepicker.trigger('xchange.xdsoft');
 				};
 
@@ -1881,7 +1891,6 @@ var DateFormatter;
 				};
 
 				_this.nextMonth = function () {
-
 					if (_this.currentTime === undefined || _this.currentTime === null) {
 						_this.currentTime = _this.now();
 					}
@@ -1916,7 +1925,6 @@ var DateFormatter;
 				};
 
 				_this.prevMonth = function () {
-
 					if (_this.currentTime === undefined || _this.currentTime === null) {
 						_this.currentTime = _this.now();
 					}
@@ -1948,9 +1956,10 @@ var DateFormatter;
 						}
 					}
 					var onejan = new Date(datetime.getFullYear(), 0, 1);
-					//First week of the year is th one with the first Thursday according to ISO8601
-					if(onejan.getDay()!=4)
-						onejan.setMonth(0, 1 + ((4 - onejan.getDay()+ 7) % 7));
+					// First week of the year is th one with the first Thursday according to ISO8601
+					if (onejan.getDay() !== 4) {
+						onejan.setMonth(0, 1 + ((4 - onejan.getDay() + 7) % 7));
+					}
 					return Math.ceil((((datetime - onejan) / 86400000) + onejan.getDay() + 1) / 7);
 				};
 
@@ -1965,7 +1974,7 @@ var DateFormatter;
 					if (tmpDate) {
 						tmpDate[2] = dateHelper.parseDate(tmpDate[2], options.formatDate);
 					}
-					if (tmpDate  && tmpDate[2]) {
+					if (tmpDate && tmpDate[2]) {
 						timeOffset = tmpDate[2].getTime() - (tmpDate[2].getTimezoneOffset()) * 60000;
 						currentTime = new Date((_this.now(true)).getTime() + parseInt(tmpDate[1] + '1', 10) * timeOffset);
 					} else {
@@ -2010,7 +2019,7 @@ var DateFormatter;
 
 			_xdsoft_datetime = new XDSoft_datetime();
 
-			applyButton.on('touchend click', function (e) {//pathbrite
+			applyButton.on('touchend click', function (e) { // pathbrite
 				e.preventDefault();
 				datetimepicker.data('changed', true);
 				_xdsoft_datetime.setCurrentTime(getCurrentValue());
@@ -2047,7 +2056,7 @@ var DateFormatter;
 						timer = 0,
 						stop = false;
 
-					(function arguments_callee1(v) {
+					(function argumentsCallee1 (v) {
 						if ($this.hasClass(options.next)) {
 							_xdsoft_datetime.nextMonth();
 						} else if ($this.hasClass(options.prev)) {
@@ -2055,15 +2064,15 @@ var DateFormatter;
 						}
 						if (options.monthChangeSpinner) {
 							if (!stop) {
-								timer = setTimeout(arguments_callee1, v || 100);
+								timer = setTimeout(argumentsCallee1, v || 100);
 							}
 						}
 					}(500));
 
-					$([document.body, window]).on('touchend mouseup.xdsoft', function arguments_callee2() {
+					$([document.body, window]).on('touchend mouseup.xdsoft', function argumentsCallee2 () {
 						clearTimeout(timer);
 						stop = true;
-						$([document.body, window]).off('touchend mouseup.xdsoft', arguments_callee2);
+						$([document.body, window]).off('touchend mouseup.xdsoft', argumentsCallee2);
 					});
 				});
 
@@ -2073,8 +2082,10 @@ var DateFormatter;
 					var $this = $(this),
 						timer = 0,
 						stop = false,
-						period = 110;
-					(function arguments_callee4(v) {
+						period = 110,
+						scrollTimeBoxParent;
+
+					scrollTimeBoxParent = function scrollTimeBoxParent (timebox, timeboxparent, v) {
 						var pheight = timeboxparent[0].clientHeight,
 							height = timebox[0].offsetHeight,
 							top = Math.abs(parseInt(timebox.css('marginTop'), 10));
@@ -2083,7 +2094,7 @@ var DateFormatter;
 						} else if ($this.hasClass(options.prev) && top - options.timeHeightInTimePicker >= 0) {
 							timebox.css('marginTop', '-' + (top - options.timeHeightInTimePicker) + 'px');
 						}
-                        /**
+						/**
                          * Fixed bug:
                          * When using css3 transition, it will cause a bug that you cannot scroll the timepicker list.
                          * The reason is that the transition-duration time, if you set it to 0, all things fine, otherwise, this
@@ -2092,21 +2103,25 @@ var DateFormatter;
                          * jquery timebox.css('marginTop') will return the original value which is before you clicking the next/prev button,
                          * meanwhile the timebox[0].style.marginTop will return the right value which is after you clicking the
                          * next/prev button.
-                         * 
+                         *
                          * What we should do:
                          * Replace timebox.css('marginTop') with timebox[0].style.marginTop.
                          */
-                        timeboxparent.trigger('scroll_element.xdsoft_scroller', [Math.abs(parseInt(timebox[0].style.marginTop, 10) / (height - pheight))]);
+						timeboxparent.trigger('scroll_element.xdsoft_scroller', [Math.abs(parseInt(timebox[0].style.marginTop, 10) / (height - pheight))]);
 						period = (period > 10) ? 10 : period - 10;
 						if (!stop) {
-							timer = setTimeout(arguments_callee4, v || period);
+							timer = setTimeout(scrollTimeBoxParent, timebox, timeboxparent, v || period);
 						}
-					}(500));
-					$([document.body, window]).on('touchend mouseup.xdsoft', function arguments_callee5() {
+					};
+
+					scrollTimeBoxParent(hourTimebox, hourTimeboxparent, 500);
+					scrollTimeBoxParent(minuteTimebox, minuteTimeboxParent, 500);
+
+					$([document.body, window]).on('touchend mouseup.xdsoft', function argumentsCallee5 () {
 						clearTimeout(timer);
 						stop = true;
 						$([document.body, window])
-							.off('touchend mouseup.xdsoft', arguments_callee5);
+							.off('touchend mouseup.xdsoft', argumentsCallee5);
 					});
 				});
 
@@ -2116,12 +2131,10 @@ var DateFormatter;
 				.on('xchange.xdsoft', function (event) {
 					clearTimeout(xchangeTimer);
 					xchangeTimer = setTimeout(function () {
-
 						if (_xdsoft_datetime.currentTime === undefined || _xdsoft_datetime.currentTime === null) {
-							//In case blanks are allowed, delay construction until we have a valid date 
-							if (options.allowBlank)
-								return;
-								
+							// In case blanks are allowed, delay construction until we have a valid date
+							if (options.allowBlank) return;
+
 							_xdsoft_datetime.currentTime = _xdsoft_datetime.now();
 						}
 
@@ -2141,9 +2154,10 @@ var DateFormatter;
 							classes = [],
 							customDateSettings,
 							newRow = true,
-							time = '',
+							hourTime = '',
+							minuteTime = '',
 							h = '',
-							line_time,
+							lineTime,
 							description;
 
 						while (start.getDay() !== options.dayOfWeekStart) {
@@ -2192,12 +2206,12 @@ var DateFormatter;
 								customDateSettings = null;
 							}
 
-							if(options.allowDateRe && Object.prototype.toString.call(options.allowDateRe) === "[object RegExp]"){
-								if(!options.allowDateRe.test(dateHelper.formatDate(start, options.formatDate))){
+							if (options.allowDateRe && Object.prototype.toString.call(options.allowDateRe) === "[object RegExp]") {
+								if (!options.allowDateRe.test(dateHelper.formatDate(start, options.formatDate))) {
 									classes.push('xdsoft_disabled');
 								}
-							} else if(options.allowDates && options.allowDates.length>0){
-								if(options.allowDates.indexOf(dateHelper.formatDate(start, options.formatDate)) === -1){
+							} else if (options.allowDates && options.allowDates.length > 0) {
+								if (options.allowDates.indexOf(dateHelper.formatDate(start, options.formatDate)) === -1) {
 									classes.push('xdsoft_disabled');
 								}
 							} else if ((maxDate !== false && start > maxDate) || (minDate !== false && start < minDate) || (customDateSettings && customDateSettings[0] === false)) {
@@ -2206,7 +2220,7 @@ var DateFormatter;
 								classes.push('xdsoft_disabled');
 							} else if (options.disabledWeekDays.indexOf(day) !== -1) {
 								classes.push('xdsoft_disabled');
-							}else if (input.is('[readonly]')) {
+							} else if (input.is('[readonly]')) {
 								classes.push('xdsoft_disabled');
 							}
 
@@ -2267,21 +2281,29 @@ var DateFormatter;
 						mounth_picker.find('.xdsoft_label span').eq(1).text(_xdsoft_datetime.currentTime.getFullYear());
 
 						// generate timebox
-						time = '';
 						h = '';
 						m = '';
 
-						line_time = function line_time(h, m) {
-							var now = _xdsoft_datetime.now(), optionDateTime, current_time,
+						hourTime = '';
+						minuteTime = '';
+
+						lineTime = function lineTime (optionsTime, singleTime) {
+							var now = _xdsoft_datetime.now(), optionDateTime, currentTime, currentHour, isCurrentHour, isCurrentMinute,
 								isALlowTimesInit = options.allowTimes && $.isArray(options.allowTimes) && options.allowTimes.length;
-							now.setHours(h);
+							if (optionsTime === 'hour') {
+								now.setHours(singleTime);
+								now.setMinutes('0');
+							} else {
+								now.setHours('0');
+								now.setMinutes(singleTime);
+							}
+
 							h = parseInt(now.getHours(), 10);
-							now.setMinutes(m);
 							m = parseInt(now.getMinutes(), 10);
 							optionDateTime = new Date(_xdsoft_datetime.currentTime);
 							optionDateTime.setHours(h);
 							optionDateTime.setMinutes(m);
-							classes = [];			
+							classes = [];
 							if ((options.minDateTime !== false && options.minDateTime > optionDateTime) || (options.maxTime !== false && _xdsoft_datetime.strtotime(options.maxTime).getTime() < now.getTime()) || (options.minTime !== false && _xdsoft_datetime.strtotime(options.minTime).getTime() > now.getTime())) {
 								classes.push('xdsoft_disabled');
 							} else if ((options.minDateTime !== false && options.minDateTime > optionDateTime) || ((options.disabledMinTime !== false && now.getTime() > _xdsoft_datetime.strtotime(options.disabledMinTime).getTime()) && (options.disabledMaxTime !== false && now.getTime() < _xdsoft_datetime.strtotime(options.disabledMaxTime).getTime()))) {
@@ -2290,43 +2312,84 @@ var DateFormatter;
 								classes.push('xdsoft_disabled');
 							}
 
-							current_time = new Date(_xdsoft_datetime.currentTime);
-							current_time.setHours(parseInt(_xdsoft_datetime.currentTime.getHours(), 10));
+							currentTime = new Date(_xdsoft_datetime.currentTime);
+							currentTime.setHours(parseInt(_xdsoft_datetime.currentTime.getHours(), 10));
 
 							if (!isALlowTimesInit) {
-								current_time.setMinutes(Math[options.roundTime](_xdsoft_datetime.currentTime.getMinutes() / options.step) * options.step);
+								currentTime.setMinutes(Math[options.roundTime](_xdsoft_datetime.currentTime.getMinutes() / options.step) * options.step);
 							}
 
-							if ((options.initTime || options.defaultSelect || datetimepicker.data('changed')) && current_time.getHours() === parseInt(h, 10) && ((!isALlowTimesInit && options.step > 59) || current_time.getMinutes() === parseInt(m, 10))) {
+							currentHour = currentTime.getHours();
+
+							if (options.hours12) {
+								currentHour %= 12;
+								currentHour = currentHour === 0 ? 12 : currentHour;
+							}
+
+							isCurrentHour = optionsTime === 'hour' ? currentHour === parseInt(h, 10) : true;
+							isCurrentMinute = optionsTime === 'minute' ? currentTime.getMinutes() === parseInt(m, 10) : true;
+
+							if ((options.initTime || options.defaultSelect || datetimepicker.data('changed')) &&
+								isCurrentHour &&
+								((!isALlowTimesInit && options.step > 59) || isCurrentMinute)) {
 								if (options.defaultSelect || datetimepicker.data('changed')) {
 									classes.push('xdsoft_current');
 								} else if (options.initTime) {
 									classes.push('xdsoft_init_time');
 								}
 							}
-							if (parseInt(today.getHours(), 10) === parseInt(h, 10) && parseInt(today.getMinutes(), 10) === parseInt(m, 10)) {
+							if ((optionsTime === 'hour' && parseInt(today.getHours(), 10) === parseInt(h, 10)) || (optionsTime === 'minute' && parseInt(today.getMinutes(), 10) === parseInt(m, 10))) {
 								classes.push('xdsoft_today');
 							}
-							time += '<div class="xdsoft_time ' + classes.join(' ') + '" data-hour="' + h + '" data-minute="' + m + '">' + dateHelper.formatDate(now, options.formatTime) + '</div>';
+
+							if (optionsTime === 'hour') {
+								hourTime += '<div class="xdsoft_time ' + classes.join(' ') + '" data-hour="' + h + '" data-minute="' + m + '">' + singleTime + '</div>';
+							} else {
+								minuteTime += '<div class="xdsoft_time ' + classes.join(' ') + '" data-hour="' + h + '" data-minute="' + m + '">' + singleTime + '</div>';
+							}
 						};
 
 						if (!options.allowTimes || !$.isArray(options.allowTimes) || !options.allowTimes.length) {
-							for (i = 0, j = 0; i < (options.hours12 ? 12 : 24); i += 1) {
-								for (j = 0; j < 60; j += options.step) {
+							// m = 0;
+							for (i = 0; i < (options.hours12 ? 12 : 24); i += 1) {
+								if (options.hours12 && i === 0) {
+									h = '12';
+								} else {
 									h = (i < 10 ? '0' : '') + i;
-									m = (j < 10 ? '0' : '') + j;
-									line_time(h, m);
 								}
+								lineTime('hour', h);
+							}
+							for (j = 0; j < 60; j += options.step) {
+								m = (j < 10 ? '0' : '') + j;
+								lineTime('minute', m);
 							}
 						} else {
 							for (i = 0; i < options.allowTimes.length; i += 1) {
 								h = _xdsoft_datetime.strtotime(options.allowTimes[i]).getHours();
 								m = _xdsoft_datetime.strtotime(options.allowTimes[i]).getMinutes();
-								line_time(h, m);
+								lineTime('hour', h);
+								lineTime('minute', m);
 							}
 						}
 
-						timebox.html(time);
+						var currentHour = parseInt(_xdsoft_datetime.currentTime.getHours(), 10),
+							currentMinute = parseInt(_xdsoft_datetime.currentTime.getMinutes(), 10);
+
+						if (options.hours12) {
+							timepicker.find('button.meridiem_time').eq(0).text(currentHour < 12 ? 'AM' : 'PM');
+							currentHour %= 12;
+							currentHour = currentHour === 0 ? 12 : currentHour;
+						} else {
+							timepicker.find('div.meridiem_time').eq(0).hide();
+						}
+
+						timepicker.find('input.hour_time').eq(0).attr('value', (currentHour < 10 ? '0' : '') + currentHour);
+						timepicker.find('input.minute_time').eq(0).attr('value', (currentMinute < 10 ? '0' : '') + currentMinute);
+
+						hourTimebox.html(hourTime);
+						minuteTimebox.html(minuteTime);
+
+						// generate month and year
 
 						opt = '';
 						i = 0;
@@ -2334,8 +2397,7 @@ var DateFormatter;
 						for (i = parseInt(options.yearStart, 10) + options.yearOffset; i <= parseInt(options.yearEnd, 10) + options.yearOffset; i += 1) {
 							opt += '<div class="xdsoft_option ' + (_xdsoft_datetime.currentTime.getFullYear() === i ? 'xdsoft_current' : '') + '" data-value="' + i + '">' + i + '</div>';
 						}
-						yearselect.children().eq(0)
-												.html(opt);
+						yearselect.children().eq(0).html(opt);
 
 						for (i = parseInt(options.monthStart, 10), opt = ''; i <= parseInt(options.monthEnd, 10); i += 1) {
 							opt += '<div class="xdsoft_option ' + (_xdsoft_datetime.currentTime.getMonth() === i ? 'xdsoft_current' : '') + '" data-value="' + i + '">' + options.i18n[globalLocale].months[i] + '</div>';
@@ -2348,30 +2410,95 @@ var DateFormatter;
 				})
 				.on('afterOpen.xdsoft', function () {
 					if (options.timepicker) {
-						var classType, pheight, height, top;
-						if (timebox.find('.xdsoft_current').length) {
-							classType = '.xdsoft_current';
-						} else if (timebox.find('.xdsoft_init_time').length) {
-							classType = '.xdsoft_init_time';
-						}
-						if (classType) {
-							pheight = timeboxparent[0].clientHeight;
-							height = timebox[0].offsetHeight;
-							top = timebox.find(classType).index() * options.timeHeightInTimePicker + 1;
-							if ((height - pheight) < top) {
-								top = height - pheight;
-							}
-							timeboxparent.trigger('scroll_element.xdsoft_scroller', [parseInt(top, 10) / (height - pheight)]);
-						} else {
-							timeboxparent.trigger('scroll_element.xdsoft_scroller', [0]);
-						}
+						hourTimeboxparent.hide();
+						minuteTimeboxParent.hide();
 					}
 				});
+
+			var attachSectionClickEvent = function attachSectionClickEvent (selector, timebox, timeboxparent) {
+				timepicker.find('input.' + selector).eq(0).on('touchend click.xdsoft', function (xdevent) {
+					xdevent.preventDefault();
+					xdevent.stopPropagation();
+					if (selector === 'hour_time') {
+						timepicker.find('.minute_time_box').hide();
+					} else if (selector === 'minute_time') {
+						timepicker.find('.hour_time_box').hide();
+					}
+
+					timeboxparent.toggle();
+
+					var classType, pheight, height, top;
+					if (timebox.find('.xdsoft_current').length) {
+						classType = '.xdsoft_current';
+					} else if (timebox.find('.xdsoft_init_time').length) {
+						classType = '.xdsoft_init_time';
+					}
+					if (classType) {
+						pheight = timeboxparent[0].clientHeight;
+						height = timebox[0].offsetHeight;
+						top = timebox.find(classType).index() * options.timeHeightInTimePicker + 1;
+						if ((height - pheight) < top) {
+							top = height - pheight;
+						}
+						timeboxparent.trigger('scroll_element.xdsoft_scroller', [parseInt(top, 10) / (height - pheight)]);
+					} else {
+						timeboxparent.trigger('scroll_element.xdsoft_scroller', [0]);
+					}
+				});
+			}
+			attachSectionClickEvent('hour_time', hourTimebox, hourTimeboxparent);
+			attachSectionClickEvent('minute_time', minuteTimebox, minuteTimeboxParent);
+
+            timepicker.find('button.meridiem_time').eq(0).on('touchend click.xdsoft', function (xdevent) {
+                xdevent.preventDefault();
+                xdevent.stopPropagation();
+                timepicker.find('.hour_time_box').hide();
+                timepicker.find('.minute_time_box').hide();
+
+                var $this = $(this),
+                    changed = false,
+					currentTime = _xdsoft_datetime.currentTime,
+					currentHour, meridiem;
+
+				if (currentTime === undefined || currentTime === null) {
+					_xdsoft_datetime.currentTime = _xdsoft_datetime.now();
+					currentTime = _xdsoft_datetime.currentTime;
+				}
+
+				if ($this.hasClass('xdsoft_disabled')) {
+					return false;
+				}
+
+                // toggle
+                $this.text() === 'AM' ? $this.text('PM') : $this.text('AM');
+
+				currentHour = currentTime.getHours();
+				meridiem = $this.text();
+
+				if (currentHour < 12 && meridiem === 'PM') {
+					currentTime.setHours(currentHour + 12);
+					changed = true;
+				} else if (currentHour >= 12 && meridiem === 'AM') {
+					currentTime.setHours(currentHour - 12);
+					changed = true;
+                }
+
+				if (changed) {
+					datetimepicker.trigger('select.xdsoft', [currentTime]);
+
+					datetimepicker.data('input').val(_xdsoft_datetime.str());
+
+					datetimepicker.data('changed', true);
+					datetimepicker.trigger('xchange.xdsoft');
+					datetimepicker.trigger('changedatetime.xdsoft');
+				}
+
+            });
 
 			timerclick = 0;
 			calendar
 				.on('touchend click.xdsoft', 'td', function (xdevent) {
-					xdevent.stopPropagation();  // Prevents closing of Pop-ups, Modals and Flyouts in Bootstrap
+					xdevent.stopPropagation(); // Prevents closing of Pop-ups, Modals and Flyouts in Bootstrap
 					timerclick += 1;
 					var $this = $(this),
 						currentTime = _xdsoft_datetime.currentTime;
@@ -2409,7 +2536,7 @@ var DateFormatter;
 					}, 200);
 				});
 
-			timebox
+			hourTimebox
 				.on('touchend click.xdsoft', 'div', function (xdevent) {
 					xdevent.stopPropagation();
 					var $this = $(this),
@@ -2424,6 +2551,35 @@ var DateFormatter;
 						return false;
 					}
 					currentTime.setHours($this.data('hour'));
+					datetimepicker.trigger('select.xdsoft', [currentTime]);
+
+					datetimepicker.data('input').val(_xdsoft_datetime.str());
+
+					if (options.onSelectTime && $.isFunction(options.onSelectTime)) {
+						options.onSelectTime.call(datetimepicker, _xdsoft_datetime.currentTime, datetimepicker.data('input'), xdevent);
+					}
+					datetimepicker.data('changed', true);
+					datetimepicker.trigger('xchange.xdsoft');
+					datetimepicker.trigger('changedatetime.xdsoft');
+					if (options.inline !== true && options.closeOnTimeSelect === true) {
+						hourTimeboxparent.hide();
+					}
+				});
+
+			minuteTimebox
+				.on('touchend click.xdsoft', 'div', function (xdevent) {
+					xdevent.stopPropagation();
+					var $this = $(this),
+						currentTime = _xdsoft_datetime.currentTime;
+
+					if (currentTime === undefined || currentTime === null) {
+						_xdsoft_datetime.currentTime = _xdsoft_datetime.now();
+						currentTime = _xdsoft_datetime.currentTime;
+					}
+
+					if ($this.hasClass('xdsoft_disabled')) {
+						return false;
+					}
 					currentTime.setMinutes($this.data('minute'));
 					datetimepicker.trigger('select.xdsoft', [currentTime]);
 
@@ -2436,7 +2592,7 @@ var DateFormatter;
 					datetimepicker.trigger('xchange.xdsoft');
 					datetimepicker.trigger('changedatetime.xdsoft');
 					if (options.inline !== true && options.closeOnTimeSelect === true) {
-						datetimepicker.trigger('close.xdsoft');
+						minuteTimeboxParent.hide();
 					}
 				});
 
@@ -2453,30 +2609,34 @@ var DateFormatter;
 					return false;
 				});
 
-			input
-				.on('mousewheel.xdsoft', function (event) {
-					if (!options.scrollInput) {
-						return true;
-					}
-					if (!options.datepicker && options.timepicker) {
-						current_time_index = timebox.find('.xdsoft_current').length ? timebox.find('.xdsoft_current').eq(0).index() : 0;
-						if (current_time_index + event.deltaY >= 0 && current_time_index + event.deltaY < timebox.children().length) {
-							current_time_index += event.deltaY;
+			var attachMouseWheelEvent = function attachMouseWheelEvent (timebox) {
+				input
+					.on('mousewheel.xdsoft', function (event) {
+						if (!options.scrollInput) {
+							return true;
 						}
-						if (timebox.children().eq(current_time_index).length) {
-							timebox.children().eq(current_time_index).trigger('mousedown');
+						if (!options.datepicker && options.timepicker) {
+							current_time_index = timebox.find('.xdsoft_current').length ? timebox.find('.xdsoft_current').eq(0).index() : 0;
+							if (current_time_index + event.deltaY >= 0 && current_time_index + event.deltaY < timebox.children().length) {
+								current_time_index += event.deltaY;
+							}
+							if (timebox.children().eq(current_time_index).length) {
+								timebox.children().eq(current_time_index).trigger('mousedown');
+							}
+							return false;
 						}
-						return false;
-					}
-					if (options.datepicker && !options.timepicker) {
-						datepicker.trigger(event, [event.deltaY, event.deltaX, event.deltaY]);
-						if (input.val) {
-							input.val(_xdsoft_datetime.str());
+						if (options.datepicker && !options.timepicker) {
+							datepicker.trigger(event, [event.deltaY, event.deltaX, event.deltaY]);
+							if (input.val) {
+								input.val(_xdsoft_datetime.str());
+							}
+							datetimepicker.trigger('changedatetime.xdsoft');
+							return false;
 						}
-						datetimepicker.trigger('changedatetime.xdsoft');
-						return false;
-					}
-				});
+					});
+			};
+			attachMouseWheelEvent(hourTimebox);
+			attachMouseWheelEvent(minuteTimebox);
 
 			datetimepicker
 				.on('changedatetime.xdsoft', function (event) {
@@ -2580,7 +2740,7 @@ var DateFormatter;
 					if (dateInputHasFixedAncestor) {
 						position = 'fixed';
 
-						//If the picker won't fit entirely within the viewport then display it above the date input.
+						// If the picker won't fit entirely within the viewport then display it above the date input.
 						if (verticalPosition + datetimepicker.outerHeight() > windowHeight + windowScrollTop) {
 							verticalAnchorEdge = 'bottom';
 							verticalPosition = (windowHeight + windowScrollTop) - dateInputOffset.top;
@@ -2618,8 +2778,8 @@ var DateFormatter;
 				datetimepickerCss = {
 					position: position,
 					left: left,
-					top: '',  //Initialize to prevent previous values interfering with new ones.
-					bottom: ''  //Initialize to prevent previous values interfering with new ones.
+					top: '', // Initialize to prevent previous values interfering with new ones.
+					bottom: '' // Initialize to prevent previous values interfering with new ones.
 				};
 
 				datetimepickerCss[verticalAnchorEdge] = verticalPosition;
@@ -2638,7 +2798,7 @@ var DateFormatter;
 						setPos();
 						$(window)
 							.off('resize.xdsoft', setPos)
-							.on('resize.xdsoft', setPos);
+								.on('resize.xdsoft', setPos);
 
 						if (options.closeOnWithoutClick) {
 							$([document.body, window]).on('touchstart mousedown.xdsoft', function arguments_callee6() {
@@ -2704,8 +2864,7 @@ var DateFormatter;
 				return ct || 0;
 			}
 
-			function setMask(options) {
-
+			function setMask (options) {
 				var isValidValue = function (mask, value) {
 					var reg = mask
 						.replace(/([\[\]\/\{\}\(\)\-\.\+]{1})/g, '\\$1')
@@ -2747,29 +2906,29 @@ var DateFormatter;
 					}
 					return false;
 				};
-				if(options.mask) {
+				if (options.mask) {
 					input.off('keydown.xdsoft');
 				}
 				if (options.mask === true) {
-														if (typeof moment != 'undefined') {
-																	options.mask = options.format
-																			.replace(/Y{4}/g, '9999')
-																			.replace(/Y{2}/g, '99')
-																			.replace(/M{2}/g, '19')
-																			.replace(/D{2}/g, '39')
-																			.replace(/H{2}/g, '29')
-																			.replace(/m{2}/g, '59')
-																			.replace(/s{2}/g, '59');
-														} else {
-																	options.mask = options.format
-																			.replace(/Y/g, '9999')
-																			.replace(/F/g, '9999')
-																			.replace(/m/g, '19')
-																			.replace(/d/g, '39')
-																			.replace(/H/g, '29')
-																			.replace(/i/g, '59')
-																			.replace(/s/g, '59');
-														}
+					if (typeof moment !== 'undefined') {
+						options.mask = options.format
+							.replace(/Y{4}/g, '9999')
+							.replace(/Y{2}/g, '99')
+							.replace(/M{2}/g, '19')
+							.replace(/D{2}/g, '39')
+							.replace(/H{2}/g, '29')
+							.replace(/m{2}/g, '59')
+							.replace(/s{2}/g, '59');
+					} else {
+						options.mask = options.format
+							.replace(/Y/g, '9999')
+							.replace(/F/g, '9999')
+							.replace(/m/g, '19')
+							.replace(/d/g, '39')
+							.replace(/H/g, '29')
+							.replace(/i/g, '59')
+							.replace(/s/g, '59');
+					}
 				}
 
 				if ($.type(options.mask) === 'string') {
@@ -2848,7 +3007,7 @@ var DateFormatter;
 
 						triggerAfterOpen = true;
 						_xdsoft_datetime.setCurrentTime(getCurrentValue(), true);
-						if(options.mask) {
+						if (options.mask) {
 							setMask(options);
 						}
 						datetimepicker.trigger('open.xdsoft');
@@ -2954,7 +3113,7 @@ var DateFormatter;
 
 	$.fn.datetimepicker.defaults = default_options;
 
-	function HighlightedDate(date, desc, style) {
+	function HighlightedDate (date, desc, style) {
 		"use strict";
 		this.date = date;
 		this.desc = desc;
