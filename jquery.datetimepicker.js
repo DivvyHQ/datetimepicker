@@ -916,13 +916,16 @@
 					'<td><div class="separator display_time"> : </div></td>' +
 					'<td><div class="minute_time display_time"><input type="text" class="display_time_text minute_time"><div class="xdsoft_time_box minute_time_box display_time"></div></div></td>' +
 					'<td><div class="separator display_time">  </div></td>' +
-					'<td><div class="meridiem_time"><button class="display_time_text meridiem_time"></button></div></td>' +
+					'<td><div class="meridiem_time"></div></td>' +
 					'</tr></tbody></table>'),
 				hourTimeboxparent = timepicker.find('.hour_time_box').eq(0),
 				hourTimebox = $('<div class="xdsoft_time_variant"></div>'),
 
 				minuteTimeboxParent = timepicker.find('.minute_time_box').eq(0),
 				minuteTimebox = $('<div class="xdsoft_time_variant"></div>'),
+
+				meridiemButtonParent = timepicker.find('.meridiem_time').eq(0),
+				meridiemButton = $('<button class="display_time_text meridiem_time"></button>'),
 
 				applyButton = $('<button type="button" class="xdsoft_save_selected blue-gradient-button">Save Selected</button>'),
 
@@ -1800,7 +1803,8 @@
 							currentMinute = parseInt(_xdsoft_datetime.currentTime.getMinutes(), 10);
 
 						if (options.hours12) {
-							timepicker.find('button.meridiem_time').eq(0).text(currentHour < 12 ? 'AM' : 'PM');
+							meridiemButtonParent.append(meridiemButton);
+							meridiemButton.text(currentHour < 12 ? 'AM' : 'PM');
 							currentHour %= 12;
 							currentHour = currentHour === 0 ? 12 : currentHour;
 						} else {
