@@ -1877,7 +1877,7 @@
 			attachSectionClickEvent('hour_time', hourTimebox, hourTimeboxparent);
 			attachSectionClickEvent('minute_time', minuteTimebox, minuteTimeboxParent);
 
-            timepicker.find('button.meridiem_time').eq(0).on('touchend click.xdsoft', function (xdevent) {
+            meridiemButton.on('touchend click.xdsoft', function (xdevent) {
                 xdevent.preventDefault();
                 xdevent.stopPropagation();
                 timepicker.find('.hour_time_box').hide();
