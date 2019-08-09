@@ -2161,6 +2161,7 @@ var DateFormatter;
 							minuteTime = '',
 							h = '',
 							lineTime,
+							isDisabledTime,
 							description;
 
 						while (start.getDay() !== options.dayOfWeekStart) {
@@ -2290,6 +2291,17 @@ var DateFormatter;
 						hourTime = '';
 						minuteTime = '';
 
+						isDisabledTime = function isDisabledTime (options, optionsTime, now) {
+							if (optionsTime !== 'hour') return false;
+							var isDisabled = (options.maxTime !== false && _xdsoft_datetime.strtotime(options.maxTime).getTime() < now.getTime()) ||
+											 (options.minTime !== false && _xdsoft_datetime.strtotime(options.minTime).getTime() > now.getTime())
+							if (isDisabled && options.hours12) {
+								const currentHour = now.getHours() + 12;
+								isDisabled = _xdsoft_datetime.strtotime(options.maxTime).getHours() <  currentHour ||
+											 _xdsoft_datetime.strtotime(options.minTime).getHours() > currentHour;
+							}
+							return isDisabled;
+						};
 						lineTime = function lineTime (optionsTime, singleTime) {
 							var now = _xdsoft_datetime.now(), optionDateTime, currentTime, currentHour, isCurrentHour, isCurrentMinute,
 								isALlowTimesInit = options.allowTimes && $.isArray(options.allowTimes) && options.allowTimes.length;
@@ -2307,9 +2319,10 @@ var DateFormatter;
 							optionDateTime.setHours(h);
 							optionDateTime.setMinutes(m);
 							classes = [];
-							if ((options.minDateTime !== false && options.minDateTime > optionDateTime) || (options.maxTime !== false && _xdsoft_datetime.strtotime(options.maxTime).getTime() < now.getTime()) || (options.minTime !== false && _xdsoft_datetime.strtotime(options.minTime).getTime() > now.getTime())) {
+							if ((options.minDateTime !== false && options.minDateTime > optionDateTime) || isDisabledTime(options, optionsTime, now)) {
 								classes.push('xdsoft_disabled');
-							} else if ((options.minDateTime !== false && options.minDateTime > optionDateTime) || ((options.disabledMinTime !== false && now.getTime() > _xdsoft_datetime.strtotime(options.disabledMinTime).getTime()) && (options.disabledMaxTime !== false && now.getTime() < _xdsoft_datetime.strtotime(options.disabledMaxTime).getTime()))) {
+							} else if ((options.minDateTime !== false && options.minDateTime > optionDateTime) ||
+									   ((options.disabledMinTime !== false && now.getTime() > _xdsoft_datetime.strtotime(options.disabledMinTime).getTime()) && (options.disabledMaxTime !== false && now.getTime() < _xdsoft_datetime.strtotime(options.disabledMaxTime).getTime()))) {
 								classes.push('xdsoft_disabled');
 							} else if (input.is('[readonly]')) {
 								classes.push('xdsoft_disabled');
@@ -2326,7 +2339,6 @@ var DateFormatter;
 
 							if (options.hours12) {
 								currentHour %= 12;
-								currentHour = currentHour === 0 ? 12 : currentHour;
 							}
 
 							isCurrentHour = optionsTime === 'hour' ? currentHour === parseInt(h, 10) : true;
@@ -2346,20 +2358,17 @@ var DateFormatter;
 							}
 
 							if (optionsTime === 'hour') {
+								singleTime = (options.hours12 && h === 0) ? '12' : singleTime;
 								hourTime += '<div class="xdsoft_time ' + classes.join(' ') + '" data-hour="' + h + '" data-minute="' + m + '">' + singleTime + '</div>';
 							} else {
 								minuteTime += '<div class="xdsoft_time ' + classes.join(' ') + '" data-hour="' + h + '" data-minute="' + m + '">' + singleTime + '</div>';
 							}
+							
 						};
-
+						
 						if (!options.allowTimes || !$.isArray(options.allowTimes) || !options.allowTimes.length) {
-							// m = 0;
 							for (i = 0; i < (options.hours12 ? 12 : 24); i += 1) {
-								if (options.hours12 && i === 0) {
-									h = '12';
-								} else {
-									h = (i < 10 ? '0' : '') + i;
-								}
+								h = (i < 10 ? '0' : '') + i;
 								lineTime('hour', h);
 							}
 							for (j = 0; j < 60; j += options.step) {
@@ -2544,7 +2553,8 @@ var DateFormatter;
 				.on('touchend click.xdsoft', 'div', function (xdevent) {
 					xdevent.stopPropagation();
 					var $this = $(this),
-						currentTime = _xdsoft_datetime.currentTime;
+						currentTime = _xdsoft_datetime.currentTime,
+						currentHour, dataHour;
 
 					if (currentTime === undefined || currentTime === null) {
 						_xdsoft_datetime.currentTime = _xdsoft_datetime.now();
@@ -2554,7 +2564,12 @@ var DateFormatter;
 					if ($this.hasClass('xdsoft_disabled')) {
 						return false;
 					}
-					currentTime.setHours($this.data('hour'));
+					currentHour = currentTime.getHours();
+					dataHour = $this.data('hour');
+					if (options.hours12) {
+						dataHour = currentHour >= 12 ? dataHour + 12 : dataHour;   
+					}
+					currentTime.setHours(dataHour);
 					datetimepicker.trigger('select.xdsoft', [currentTime]);
 
 					datetimepicker.data('input').val(_xdsoft_datetime.str());
