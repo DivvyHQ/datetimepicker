@@ -2296,7 +2296,7 @@ var DateFormatter;
 							var isDisabled = (options.maxTime !== false && _xdsoft_datetime.strtotime(options.maxTime).getTime() < now.getTime()) ||
 											 (options.minTime !== false && _xdsoft_datetime.strtotime(options.minTime).getTime() > now.getTime())
 							if (isDisabled && options.hours12) {
-								const currentHour = now.getHours() + 12;
+								var currentHour = now.getHours() + 12;
 								isDisabled = _xdsoft_datetime.strtotime(options.maxTime).getHours() <  currentHour ||
 											 _xdsoft_datetime.strtotime(options.minTime).getHours() > currentHour;
 							}
