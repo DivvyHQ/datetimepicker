@@ -2801,7 +2801,22 @@ var DateFormatter;
 					bottom: '' // Initialize to prevent previous values interfering with new ones.
 				};
 
-				datetimepickerCss[verticalAnchorEdge] = verticalPosition;
+				var hasPosition = options.verticalPosition && typeof options.verticalPosition === 'string';
+				if (hasPosition) {
+					var topOffsetHeight = (dateInputOffset.top + dateInputElem.offsetHeight);
+					if (options.verticalPosition === 'top') {
+						// always on top of the input element
+						datetimepickerCss.bottom = (windowHeight + windowScrollTop) - dateInputOffset.top;
+					} else if (options.verticalPosition === 'bottom') {
+						// always on bottom of the input element
+						datetimepickerCss.top =  topOffsetHeight - windowScrollTop - 1;
+					} else {
+						hasPosition = false;
+					}
+				} 
+				if (!hasPosition) {
+					datetimepickerCss[verticalAnchorEdge] = verticalPosition;
+				}
 
 				datetimepicker.css(datetimepickerCss);
 			};
