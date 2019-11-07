@@ -1660,8 +1660,9 @@
 								classes.push('xdsoft_other_month');
 							}
 
-							if ((options.defaultSelect || datetimepicker.data('changed')) && dateHelper.formatDate(_xdsoft_datetime.currentTime, options.formatDate) === dateHelper.formatDate(start, options.formatDate)) {
-								classes.push('xdsoft_current');
+							if ((options.defaultSelect || datetimepicker.data('changed')) &&
+								dateHelper.formatDate(getCurrentValue(), options.formatDate) === dateHelper.formatDate(start, options.formatDate)) {
+									classes.push('xdsoft_current');
 							}
 
 							if (dateHelper.formatDate(today, options.formatDate) === dateHelper.formatDate(start, options.formatDate)) {
