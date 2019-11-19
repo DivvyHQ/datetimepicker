@@ -1,39 +1,19 @@
-# PLEASE. Help me update documentation.
-[Doc.tpl](https://github.com/xdan/datetimepicker/blob/master/doc.tpl)
-This file will be automatically displayed on the site
-
-# datetimepicker
-==============
-
-**!!! The latest version of the options 'lang' obsolete. The language setting is now global. !!!**
-
-Use this:
-```javascript
-$.datetimepicker.setLocale('en');
-```
 [Documentation][doc]
 
 jQuery Plugin Date and Time Picker
 
 DateTimePicker
 
-![ScreenShot](https://raw.github.com/xdan/datetimepicker/master/screen/1.png)
+![Datetimepicker](https://user-images.githubusercontent.com/44064038/69162152-2922d480-0b27-11ea-8fec-8edc3bf48c6a.png)
 
 DatePicker
 
-![ScreenShot](https://raw.github.com/xdan/datetimepicker/master/screen/2.png)
+![Datepicker](https://user-images.githubusercontent.com/44064038/69162203-3cce3b00-0b27-11ea-823a-5f7e598f5cf2.png)
 
 TimePicker
 
-![ScreenShot](https://raw.github.com/xdan/datetimepicker/master/screen/3.png)
+![Timepicker](https://user-images.githubusercontent.com/44064038/69162232-46f03980-0b27-11ea-9169-16ac28c9fd49.png)
 
-Options to highlight individual dates or periods
-
-![ScreenShot](https://raw.github.com/Mingpao/datetimepicker/master/screen/4.png)
-
-![ScreenShot](https://raw.github.com/Mingpao/datetimepicker/master/screen/5.png)
-
-![ScreenShot](https://raw.github.com/Mingpao/datetimepicker/master/screen/6.png)
 
 [doc]: http://xdsoft.net/jqplugins/datetimepicker/
 
